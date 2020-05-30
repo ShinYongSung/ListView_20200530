@@ -12,7 +12,7 @@ import java.sql.RowId
 
 class StudentAdapter (context: Context, resId: Int, list: List<Student>) : ArrayAdapter<Student> (context, resId, list){
     val mContext = context
-    val mList = List
+    val mList = list
     val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -21,7 +21,7 @@ class StudentAdapter (context: Context, resId: Int, list: List<Student>) : Array
 //        그모양에 어떤값을 적어줄지 결정(실제 데이터출력 작업)
         var tempRow = convertView
         if (tempRow == null) {
-            tempRow = inf.inflate(R.layout.student_list_item null)
+            tempRow = inf.inflate(R.layout.student_list_item,null)
         }
 
         val row = tempRow!!
