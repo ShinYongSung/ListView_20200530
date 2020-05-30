@@ -1,7 +1,9 @@
 package my.kim.listview_20200530
 
+import android.icu.text.Transliterator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import my.kim.listview_20200530.adapter.StudentAdapter
 import my.kim.listview_20200530.datas.Student
@@ -19,17 +21,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        students.add(Student("조경진", iby = 1988, gender = true))
-        students.add(Student("김광철", iby = 1966, gender = true))
-        students.add(Student("김재환", iby = 1993, gender = true))
-        students.add(Student("박수정", iby = 1994, gender = false))
-        students.add(Student("신용성", iby = 1988, gender = true))
-        students.add(Student("엄곤지", iby = 1984, gender = false))
-        students.add(Student("이승원", iby = 1978, gender = true))
-        students.add(Student("이현호", iby = 1981, gender = true))
+        students.add(Student("조경진", 1988, true))
+        students.add(Student("김광철",  1966, true))
+        students.add(Student("김재환",  1993,  true))
+        students.add(Student("박수정",  1994,  false))
+        students.add(Student("신용성",  1988,  true))
+        students.add(Student("엄곤지",  1984,  false))
+        students.add(Student("이승원",  1978,  true))
+        students.add(Student("이현호",  1981,  true))
 
         studentAdapter = StudentAdapter(this, R.layout.student_list_item, students)
 
         studentListView.adapter = studentAdapter
+
+        studentListView.setOnItemClickListener { parent, view, position, id ->
+
+        }
     }
 }

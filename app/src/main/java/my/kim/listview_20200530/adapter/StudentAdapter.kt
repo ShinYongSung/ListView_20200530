@@ -37,7 +37,7 @@ class StudentAdapter (context: Context, resId: Int, list: List<Student>) : Array
         val genderTxt = row.findViewById<TextView>(R.id.genderTxt)
 
         // 상황에 맞는 데이터 세팅.
-        nameAndAgeTxt.text = "${data.name}(${data.getKoreanAge(year = 2020)}세)"
+        nameAndAgeTxt.text = "${data.name}(${data.getKoreanAge(2020)}세)"
 
         if (data.isMale) {
             genderTxt.text = "남성 수강생"
@@ -45,6 +45,8 @@ class StudentAdapter (context: Context, resId: Int, list: List<Student>) : Array
         else {
             genderTxt.text = "여성 수강생"
         }
+
+
 
 
         return row
