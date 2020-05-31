@@ -11,7 +11,7 @@ class viewStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_student)
 
-        val student = intent.getSerializableExtra("Student") as Student
+        val student = intent.getSerializableExtra("student") as Student
 
         nameTxt.text = student.name
         ageTxt.text = "${student.getKoreanAge(2020)}세(${student.birthYear}년생)"
