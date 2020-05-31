@@ -2,6 +2,7 @@ package my.kim.listview_20200530
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_view_student.*
 import my.kim.listview_20200530.datas.Student
 
 class viewStudentActivity : AppCompatActivity() {
@@ -11,6 +12,14 @@ class viewStudentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_student)
 
         val student = intent.getSerializableExtra("Student") as Student
+
+        nameTxt.text = student.name
+        ageTxt.text = "${student.getKoreanAge(2020)}세(${student.birthYear}년생)"
+
+        if (student.isMale) {
+            genderTxt.text = "남성"
+        }
+        else{genderTxt.text = "여성"}
 
     }
 }
