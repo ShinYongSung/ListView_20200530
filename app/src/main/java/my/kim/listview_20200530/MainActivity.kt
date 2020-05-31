@@ -52,7 +52,17 @@ class MainActivity : AppCompatActivity() {
             myIntent.putExtra("student", clickedStudent)
             startActivity(myIntent)
 
-
         }
+
+        studentListView.setOnItemLongClickListener { parent, view, position, id ->
+
+            Toast.makeText(this,"${position}번 줄 롱클릭", Toast.LENGTH_SHORT).show()
+
+//            long클릭은 boolean값을 리턴해줘야함
+            return@setOnItemLongClickListener true
+        }
+
+
+
     }
 }
