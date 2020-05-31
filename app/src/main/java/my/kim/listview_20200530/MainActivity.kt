@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             val  clickedStudent = students.get(position)
 
             // 빼낸 학생 정보를 이용해서 토스트로 출력
-            Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT).show()
 
             val myIntent = Intent(this, viewStudentActivity::class.java)
             myIntent.putExtra("student", clickedStudent)
