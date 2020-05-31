@@ -1,5 +1,6 @@
 package my.kim.listview_20200530
 
+import android.content.Intent
 import android.icu.text.Transliterator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -41,11 +42,16 @@ class MainActivity : AppCompatActivity() {
             // 몇번 줄이 눌렸는지 확인 - posision이 몇?
             Log.d("리스트뷰아이템클릭", "${position}번 줄 클릭")
 
-            //
+            // position으로 배열(ArrayList)에서 학생정보 추출
             val  clickedStudent = students.get(position)
 
             // 빼낸 학생 정보를 이용해서 토스트로 출력
             Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT).show()
+
+            val myIntent = Intent(this, viewStudentActivity::class.java)
+            myIntent.putExtra("student", clickedStudent)
+            startActivity(myIntent)
+
 
         }
     }
